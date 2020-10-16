@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hello NewPlaceholder</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    #ctn {
+      position: relative;
+      margin: 20px;
+      padding: 20px;
+      border: 1px solid #999;
+      visibility: hidden;
+    }
+
+    h1, p, .avatar {
+      margin: 10px 0;
+    }
+
+    .avatar {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background-color: antiquewhite;
+      text-align: center;
+      line-height: 50px;
+    }
+
+    .special-pos {
+      position: absolute;
+      top: 120px;
+      left: 90px;
+    }
+  </style>
+</head>
+<body>
+  <div id="app">
+    <div id="ctn" class="nph-ctn">
+      <h1 class="nph-item">{{ title }}</h1>
+      <p class="nph-item">{{ greeting }}</p>
+      <div class="avatar nph-item">
+        {{ name }}
+      </div>
+
+      <div class="special-pos nph-item">
+        {{ tag }}
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="../dist/bundle.js"></script>
+  <script>
+    var app = new Vue({
+      el: '#app',
+      data: {
+        title: 'NewPlaceHolder',
+        greeting: 'Hello NewPlaceHolder!',
+        name: 'Tom',
+        tag: 'posited'
+      },
+      mounted () {
+        const nph = new NewPlaceholder('#ctn')
+
+        setTimeout(() => {
+          nph.showPlaceholder(false)
+        }, 1500)
+      }
+    })
+  </script>
+</body>
+</html>

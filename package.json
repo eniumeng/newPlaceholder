@@ -1,0 +1,20 @@
+{
+  "name": "newplaceholder",
+  "version": "0.1.0",
+  "description": "A library to provide nicer experience when loading data",
+  "main": "dist/bundle.js",
+  "scripts": {
+    "watch": "rollup -c --watch",
+    "build": "rollup -c"
+  },
+  "author": "niumeng",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.11.6",
+    "@babel/preset-env": "^7.11.5",
+    "@rollup/plugin-babel": "^5.2.1",
+    "@rollup/plugin-node-resolve": "^9.0.0",
+    "rollup": "^2.29.0",
+    "rollup-plugin-uglify": "^6.0.4"
+  }
+}
